@@ -2,15 +2,14 @@
 #include <stdlib.h>
 #include <time.h>
 #include <unistd.h>
-// definerer alle Variabler der skal bruges
-
+// definerer alle Variable.
 enum { SPOCK = 0, SCISSORS = 1, PAPER = 2, ROCK = 3, LIZARD = 4 } PLAYER;
 int user_input;
 int PlayerScore = 0;
 int PcScore = 0;
 int PlayerChoice;
 int Diff;
-int MaxScore = 5;
+int WinningScore = 5;
 
 int main() {
   srand(time(NULL)); // Generer en seed baseret på tidspunktet
@@ -26,7 +25,7 @@ int main() {
     else if (user_input == 's') {
       puts("Game is starting...");
       sleep(1);
-      while (PcScore < MaxScore && PlayerScore < MaxScore) {
+      while (PcScore < WinningScore && PlayerScore < WinningScore) {
         // Do while statement der bliver ved med at scanne user input indtil der
         // bliver indtastet en værdi mellem 0 og 4
 
